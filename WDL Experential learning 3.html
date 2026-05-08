@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PWA Theme -->
+    <meta name="theme-color" content="#1565c0">
+
+    <title>NewsHub PWA</title>
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icon -->
+    <link rel="icon" href="icon-192.png">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            color:#333;
+        }
+
+        /* HEADER */
+        .app-bar{
+            background:#1565c0;
+            color:white;
+            padding:15px;
+            position:sticky;
+            top:0;
+        }
+
+        .app-bar-content{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:10px;
+        }
+
+        .app-bar h1{
+            font-size:24px;
+        }
+
+        form{
+            display:flex;
+            gap:5px;
+        }
+
+        input[type="search"]{
+            padding:8px;
+            border:none;
+            border-radius:5px;
+        }
+
+        button{
+            padding:8px 12px;
+            border:none;
+            border-radius:5px;
+            background:#0d47a1;
+            color:white;
+            cursor:pointer;
+        }
+
+        /* MAIN */
+        main{
+            padding:20px;
+            margin-bottom:80px;
+        }
+
+        /* ARTICLE CARD */
+        .article-card{
+            background:white;
+            border-radius:10px;
+            margin-bottom:20px;
+            overflow:hidden;
+            box-shadow:0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .article-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .article-content{
+            padding:15px;
+        }
+
+        .article-content h2{
+            margin-bottom:10px;
+        }
+
+        .article-content p{
+            margin-bottom:10px;
+        }
+
+        details{
+            background:#eeeeee;
+            padding:10px;
+            border-radius:5px;
+            margin-top:10px;
+        }
+
+        summary{
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        time{
+            display:block;
+            margin-top:10px;
+            color:gray;
+        }
+
+        /* ASIDE */
+        aside{
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            margin-top:20px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        aside ul{
+            padding-left:20px;
+            margin-top:10px;
+        }
+
+        /* BOTTOM NAV */
+        .bottom-nav{
+            position:fixed;
+            bottom:0;
+            left:0;
+            width:100%;
+            background:#1565c0;
+            display:flex;
+            justify-content:space-around;
+            padding:12px 0;
+        }
+
+        .bottom-nav a{
+            color:white;
+            text-decoration:none;
+            font-size:18px;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#0d47a1;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+        /* RESPONSIVE */
+        @media (min-width:768px){
+
+            main{
+                display:grid;
+                grid-template-columns:3fr 1fr;
+                gap:20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="app-bar">
+
+        <nav class="app-bar-content">
+
+            <button>☰</button>
+
+            <h1>NewsHub</h1>
+
+            <!-- SEARCH -->
+            <form>
+
+                <input 
+                    type="search" 
+                    placeholder="Search News..." 
+                    required>
+
+                <button type="submit">🔍</button>
+
+            </form>
+
+        </nav>
+
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- ARTICLES -->
+        <section id="articles">
+
+            <!-- ARTICLE -->
+            <article class="article-card">
+
+                <figure>
+
+                    <img 
+                        src="https://picsum.photos/600/300" 
+                        alt="News Image"
+                        loading="lazy">
+
+                    <figcaption>
+                        Breaking News
+                    </figcaption>
+
+                </figure>
+
+                <div class="article-content">
+
+                    <h2>Technology is Growing Fast</h2>
+
+                    <p>
+                        New technologies are improving modern life and communication.
+                    </p>
+
+                    <!-- DETAILS -->
+                    <details>
+
+                        <summary>Read More</summary>
+
+                        <p>
+                            This section contains extra hidden information about the article.
+                        </p>
+
+                    </details>
+
+                    <!-- TIME -->
+                    <time datetime="2026-05-06">
+                        May 6, 2026
+                    </time>
+
+                </div>
+
+            </article>
+
+            <!-- SECOND ARTICLE -->
+            <article class="article-card">
+
+                <figure>
+
+                    <img 
+                        src="https://picsum.photos/600/301" 
+                        alt="Sports News"
+                        loading="lazy">
+
+                    <figcaption>
+                        Sports Update
+                    </figcaption>
+
+                </figure>
+
+                <div class="article-content">
+
+                    <h2>Big Match Highlights</h2>
+
+                    <p>
+                        The latest sports event created excitement among fans.
+                    </p>
+
+                    <details>
+
+                        <summary>Read More</summary>
+
+                        <p>
+                            Detailed sports information is available here.
+                        </p>
+
+                    </details>
+
+                    <time datetime="2026-05-07">
+                        May 7, 2026
+                    </time>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- ASIDE -->
+        <aside>
+
+            <h3>Trending Topics</h3>
+
+            <ul>
+                <li>Technology</li>
+                <li>Sports</li>
+                <li>World News</li>
+                <li>Entertainment</li>
+            </ul>
+
+        </aside>
+
+    </main>
+
+    <!-- TEMPLATE -->
+    <template id="articleTemplate">
+
+        <article class="article-card">
+
+            <div class="article-content">
+
+                <h2></h2>
+
+                <p></p>
+
+            </div>
+
+        </article>
+
+    </template>
+
+    <!-- DIALOG -->
+    <dialog id="newsDialog">
+
+        <h2>Welcome to NewsHub</h2>
+
+        <p>
+            This is a Progressive Web App.
+        </p>
+
+        <button onclick="closeDialog()">
+            Close
+        </button>
+
+    </dialog>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+        <a href="#">🏠 Home</a>
+        <a href="#">🔥 Trending</a>
+        <a href="#">📰 News</a>
+        <a href="#">⚙ Settings</a>
+
+    </nav>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 NewsHub PWA
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Open dialog
+        window.onload = function(){
+
+            document
+                .getElementById("newsDialog")
+                .showModal();
+
+        };
+
+        // Close dialog
+        function closeDialog(){
+
+            document
+                .getElementById("newsDialog")
+                .close();
+
+        }
+
+        // Template Example
+        const template =
+            document.getElementById("articleTemplate");
+
+        const clone =
+            template.content.cloneNode(true);
+
+        clone.querySelector("h2").textContent =
+            "Dynamic News Loaded";
+
+        clone.querySelector("p").textContent =
+            "This article is added using template element.";
+
+        document
+            .getElementById("articles")
+            .appendChild(clone);
+
+        // Service Worker
+        if('serviceWorker' in navigator){
+
+            navigator.serviceWorker
+                .register('service-worker.js')
+                .then(function(){
+
+                    console.log("Service Worker Registered");
+
+                });
+
+        }
+
+    </script>
+
+</body>
+</html>
